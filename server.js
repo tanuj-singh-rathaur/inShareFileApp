@@ -9,11 +9,7 @@ const downlodsRouter = require('./routes/downloads')
 const downloadRouter = require('./routes/download')
 const port = 3000 || process.env.PORT
 
-// app.get('/', (req, res) => res.send('Hello World!'))
-app.listen(port, () => {
-    console.log(`Server is active and running on port ${port}`)
 
-})
 app.use(express.json())
 app.use(express.static('public'))
 app.set('views', path.join(__dirname, '/views'))
@@ -24,7 +20,11 @@ app.use('/files/download', downloadRouter)
 app.use('/api/files', uploadRouter)
 app.use('/files', downlodsRouter)
 
+// app.get('/', (req, res) => res.send('Hello World!'))
+app.listen(port, () => {
+    console.log(`Server is active and running on port ${port}`)
 
+})
 dbConnection()
 
 
