@@ -21,7 +21,7 @@ app.use('/api/files', uploadRouter)
 app.use('/files', downlodsRouter)
 
 // app.get('/', (req, res) => res.send('Hello World!'))
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
     console.log(`Server is active and running on port ${port}`)
 
 })
