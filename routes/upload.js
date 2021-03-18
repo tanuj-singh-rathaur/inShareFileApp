@@ -88,7 +88,7 @@ router.post('/send', async (req, res) => {
     //send mail
     const subject = `inShare File Sharing`
     const text = `${emailFrom} has shared a file with you`
-    const downloadLink = `${process.env.APP_Base_URL}/files/${file.uuid}`
+    const downloadLink = `${process.env.APP_BASE_URL}/files/${file.uuid}`
     const size = parseInt(file.size / 1000) + ' KB'
     const expires = '24 hours'
 
