@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 
 const mongodbConnection = () => {
-    mongoose.connect(process.env.LOCALDB, {
+    mongoose.connect(process.env.DATABASE, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false,
