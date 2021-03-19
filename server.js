@@ -7,7 +7,7 @@ const app = express()
 const uploadRouter = require('./routes/upload')
 const downlodsRouter = require('./routes/downloads')
 const downloadRouter = require('./routes/download')
-const port = 3000 || process.env.PORT
+const port = process.env.PORT || 3000
 
 
 app.use(express.json())
