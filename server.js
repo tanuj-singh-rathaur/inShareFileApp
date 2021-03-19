@@ -1,5 +1,6 @@
 const express = require('express')
 const dbConnection = require('./config/mongodb')
+const cors = require('cors');
 const path = require('path')
 const app = express()
 
@@ -10,6 +11,12 @@ const downloadRouter = require('./routes/download')
 const port = process.env.PORT || 3000
 
 
+// Cors 
+const corsOptions = {
+    origin: process.env.ALLOWED_CLIENTS.split(',')
+    // ['http://localhost:3000', 'http://localhost:5000', 'http://localhost:3300']
+}
+app.use(cors(corsOptions))
 app.use(express.json())
 app.use(express.static('public'))
 app.set('views', path.join(__dirname, '/views'))
