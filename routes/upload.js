@@ -60,7 +60,7 @@ router.post('/', (req, res) => {
 
         //sending the response
 
-        return res.json({ file: `${process.env.APP_Base_URL}/files/${response.uuid}` })
+        return res.json({ file: `${process.env.APP_BASE_URL}/files/${response.uuid}` })
         //http://localhost:3000/filessdad
 
 
