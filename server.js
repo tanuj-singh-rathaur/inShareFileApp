@@ -24,6 +24,18 @@ app.use('/api/files', uploadRouter)
 app.use('/files', downlodsRouter)
 
 app.get('/', (req, res) => res.render('index'))
+
+app.use((req, res, next) => {
+
+    res.header("Access-Control-Allow-Origin", "*")
+    res.header(
+        "Access-Control-Allow-Headers", "*")
+    if (req.method === 'OPTIONS') {
+        req.header("Access-Control-Allow-Methods", 'PUT,POST,PATCH,DELETE,GET')
+        return res.status(200).json({})
+    }
+})
+
 app.listen(port, '0.0.0.0', () => {
     console.log(`Server is active and running on port ${port}`)
 
