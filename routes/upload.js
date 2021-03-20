@@ -6,7 +6,7 @@ const router = express.Router()
 const { v4: uuid4 } = require('uuid')
 const sendMail = require('../services/sendingemails')
 const emailTemplate = require('../services/emailTemplate')
-
+const cors = require('cors')
 
 
 
@@ -35,7 +35,7 @@ let upload = multer({
     limits: { fileSize: 1000000 * 100 }
 }).single('myfile')
 
-router.post('/', (req, res) => {
+router.post('/', cors(), (req, res) => {
 
     upload(req, res, async (err) => {
 
